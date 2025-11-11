@@ -7,105 +7,127 @@
   <style>
     body {
       margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #0d1b2a;
+      font-family: Arial, sans-serif;
+      background-color: #0b1b2b;
       color: #fff;
       display: flex;
       min-height: 100vh;
     }
 
-    /* Sol menü */
+    /* Sol filtre paneli */
     .sidebar {
-      width: 300px;
-      background: linear-gradient(180deg, #1b263b, #0d1b2a);
+      width: 25%;
+      background: #13293d;
       padding: 20px;
-      box-shadow: 3px 0 10px rgba(0,0,0,0.4);
-      display: flex;
-      flex-direction: column;
-      gap: 15px;
+      box-shadow: 4px 0 10px rgba(0,0,0,0.3);
     }
-
     .sidebar h2 {
       color: #00b4d8;
+      font-size: 22px;
       text-align: center;
-      margin-bottom: 10px;
     }
-
-    label {
+    .sidebar label {
+      display: block;
+      margin-top: 10px;
+      font-weight: bold;
       font-size: 14px;
-      margin-bottom: 4px;
-      color: #a8dadc;
     }
-
-    select, input[type="range"] {
+    .sidebar input, .sidebar select {
       width: 100%;
-      padding: 5px;
+      padding: 8px;
+      margin-top: 4px;
+      border-radius: 5px;
       border: none;
-      border-radius: 6px;
-      background: #1d3557;
-      color: white;
+      background: #1b3b5f;
+      color: #fff;
+    }
+    .sidebar input[type=range] {
+      width: 100%;
     }
 
-    /* Sağ taraf */
+    /* Sağ içerik alanı */
     .content {
-      flex: 1;
-      padding: 20px;
+      flex-grow: 1;
+      padding: 30px;
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-      gap: 15px;
-      background: #1b263b;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 25px;
+      background: #0f2a3f;
     }
 
     .card {
-      background: #0d1b2a;
-      border-radius: 10px;
-      padding: 10px;
-      text-align: center;
-      box-shadow: 0 0 10px rgba(0,0,0,0.4);
-      transition: transform 0.2s;
-      cursor: pointer;
+      background: #102c45;
+      border-radius: 15px;
+      box-shadow: 0 0 15px rgba(0, 180, 216, 0.3);
+      overflow: hidden;
+      transition: transform 0.3s ease;
     }
-
     .card:hover {
       transform: scale(1.03);
-      box-shadow: 0 0 15px #00b4d8;
     }
-
     .card img {
       width: 100%;
-      border-radius: 10px;
-      margin-bottom: 8px;
+      height: 200px;
+      object-fit: cover;
     }
-
     .card h3 {
-      margin: 0;
-      font-size: 16px;
-      color: #e0f7fa;
+      margin: 10px;
+      color: #caf0f8;
+      font-size: 18px;
+    }
+    .card p {
+      margin: 10px;
+      color: #ade8f4;
     }
 
-    .card p {
-      font-size: 13px;
-      color: #a8dadc;
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: #081826;
+      padding: 12px 0;
+      text-align: center;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.3);
+      z-index: 10;
+    }
+    nav a {
+      color: #fff;
+      margin: 0 12px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav a:hover {
+      color: #00b4d8;
     }
   </style>
 </head>
 <body>
 
-  <div class="sidebar">
-    <h2>datcaemlakdefteri.com</h2>
+  <nav>
+    <a href="index.html">Ana Sayfa</a>
+    <a href="mahalleler/iskele.html">Mahallelere Göre İlanlar</a>
+    <a href="hizmetlerimiz.html">Hizmetlerimiz</a>
+    <a href="sponsorlarimiz.html">Sponsorlarımız</a>
+    <a href="hakkimizda.html">Hakkımızda</a>
+    <a href="musteri-gorusleri.html">Müşteri Görüşleri</a>
+  </nav>
 
+  <div class="sidebar">
+    <h2>datçaemlakdefteri.com</h2>
     <label>Defter No</label>
-    <input type="number" placeholder="örn. 125">
+    <input type="text" placeholder="örn. 125">
 
     <label>Mahalle</label>
     <select>
       <option>Reşadiye</option>
-      <option>İskele</option>
       <option>Hızırşah</option>
+      <option>İskele</option>
+      <option>Yaka</option>
     </select>
 
     <label>Fiyat Aralığı</label>
-    <input type="range" min="0" max="5000000" step="10000">
+    <input type="range" min="0" max="5000000" step="100000">
 
     <label>Nitelik</label>
     <select>
@@ -123,14 +145,15 @@
 
   <div class="content">
     <div class="card">
-      <img src="https://picsum.photos/300/200?random=1" alt="İlan Görseli">
+      <img src="https://picsum.photos/400/200?random=1" alt="">
       <h3>Satılık Konut</h3>
-      <p>Reşadiye Mah. 3+1 Daire - 4.500.000₺</p>
+      <p>Reşadiye Mah. 3+1 Daire - 4.500.000 ₺</p>
     </div>
+
     <div class="card">
-      <img src="https://picsum.photos/300/200?random=2" alt="İlan Görseli">
+      <img src="https://picsum.photos/400/200?random=2" alt="">
       <h3>Yatırımlık Tarla</h3>
-      <p>Hızırşah Mah. 750 m² - 1.200.000₺</p>
+      <p>Hızırşah Mah. 750 m² - 1.200.000 ₺</p>
     </div>
   </div>
 
