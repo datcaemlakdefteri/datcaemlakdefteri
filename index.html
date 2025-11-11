@@ -7,24 +7,132 @@
   <style>
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: #0b2d2b;
-      color: white;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #0d1b2a;
+      color: #fff;
       display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
+      min-height: 100vh;
     }
-    iframe {
-      width: 90%;
-      height: 90vh;
+
+    /* Sol menü */
+    .sidebar {
+      width: 300px;
+      background: linear-gradient(180deg, #1b263b, #0d1b2a);
+      padding: 20px;
+      box-shadow: 3px 0 10px rgba(0,0,0,0.4);
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .sidebar h2 {
+      color: #00b4d8;
+      text-align: center;
+      margin-bottom: 10px;
+    }
+
+    label {
+      font-size: 14px;
+      margin-bottom: 4px;
+      color: #a8dadc;
+    }
+
+    select, input[type="range"] {
+      width: 100%;
+      padding: 5px;
       border: none;
-      border-radius: 12px;
-      box-shadow: 0 0 20px rgba(0,0,0,0.4);
+      border-radius: 6px;
+      background: #1d3557;
+      color: white;
+    }
+
+    /* Sağ taraf */
+    .content {
+      flex: 1;
+      padding: 20px;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 15px;
+      background: #1b263b;
+    }
+
+    .card {
+      background: #0d1b2a;
+      border-radius: 10px;
+      padding: 10px;
+      text-align: center;
+      box-shadow: 0 0 10px rgba(0,0,0,0.4);
+      transition: transform 0.2s;
+      cursor: pointer;
+    }
+
+    .card:hover {
+      transform: scale(1.03);
+      box-shadow: 0 0 15px #00b4d8;
+    }
+
+    .card img {
+      width: 100%;
+      border-radius: 10px;
+      margin-bottom: 8px;
+    }
+
+    .card h3 {
+      margin: 0;
+      font-size: 16px;
+      color: #e0f7fa;
+    }
+
+    .card p {
+      font-size: 13px;
+      color: #a8dadc;
     }
   </style>
 </head>
 <body>
-  <iframe src="https://script.google.com/macros/s/AKfycbxM4ohmw0EEvOe0YQBmAQZMxo5sW7Bfk5KrAic9mbQmbAzJrwwcNCzQ00ncwtjDjrfr/exec" allowfullscreen></iframe>
+
+  <div class="sidebar">
+    <h2>datcaemlakdefteri.com</h2>
+
+    <label>Defter No</label>
+    <input type="number" placeholder="örn. 125">
+
+    <label>Mahalle</label>
+    <select>
+      <option>Reşadiye</option>
+      <option>İskele</option>
+      <option>Hızırşah</option>
+    </select>
+
+    <label>Fiyat Aralığı</label>
+    <input type="range" min="0" max="5000000" step="10000">
+
+    <label>Nitelik</label>
+    <select>
+      <option>Tarla</option>
+      <option>Konut</option>
+      <option>İşyeri</option>
+    </select>
+
+    <label>Durumu</label>
+    <select>
+      <option>Satılık</option>
+      <option>Kiralık</option>
+    </select>
+  </div>
+
+  <div class="content">
+    <div class="card">
+      <img src="https://picsum.photos/300/200?random=1" alt="İlan Görseli">
+      <h3>Satılık Konut</h3>
+      <p>Reşadiye Mah. 3+1 Daire - 4.500.000₺</p>
+    </div>
+    <div class="card">
+      <img src="https://picsum.photos/300/200?random=2" alt="İlan Görseli">
+      <h3>Yatırımlık Tarla</h3>
+      <p>Hızırşah Mah. 750 m² - 1.200.000₺</p>
+    </div>
+  </div>
+
 </body>
 </html>
