@@ -7,50 +7,98 @@
   <style>
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
+      font-family: "Segoe UI", Arial, sans-serif;
       background-color: #0b1b2b;
       color: #fff;
       display: flex;
       min-height: 100vh;
     }
 
-    /* Sol filtre paneli */
+    /* Üst Menü */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: #081826;
+      padding: 8px 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.3);
+      z-index: 10;
+    }
+
+    .logo-area {
+      display: flex;
+      align-items: center;
+      margin-left: 20px;
+    }
+    .logo-area img {
+      width: 28px;
+      height: 28px;
+      margin-right: 8px;
+    }
+    .logo-area span {
+      font-size: 16px;
+      font-weight: bold;
+      color: #00b4d8;
+    }
+
+    .nav-links {
+      margin-right: 20px;
+    }
+    .nav-links a {
+      color: #fff;
+      margin: 0 8px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 14px;
+    }
+    .nav-links a:hover {
+      color: #00b4d8;
+    }
+
+    /* Sol Panel */
     .sidebar {
       width: 25%;
       background: #13293d;
       padding: 20px;
       box-shadow: 4px 0 10px rgba(0,0,0,0.3);
+      margin-top: 55px;
     }
     .sidebar h2 {
       color: #00b4d8;
-      font-size: 22px;
+      font-size: 18px;
       text-align: center;
+      margin-bottom: 20px;
     }
     .sidebar label {
       display: block;
-      margin-top: 10px;
-      font-weight: bold;
-      font-size: 14px;
+      margin-top: 8px;
+      font-weight: 600;
+      font-size: 13px;
     }
     .sidebar input, .sidebar select {
       width: 100%;
-      padding: 8px;
-      margin-top: 4px;
+      padding: 6px;
+      margin-top: 3px;
       border-radius: 5px;
       border: none;
       background: #1b3b5f;
       color: #fff;
+      font-size: 13px;
     }
     .sidebar input[type=range] {
       width: 100%;
     }
 
-    /* Sağ içerik alanı */
+    /* İlan Kartları Alanı */
     .content {
       flex-grow: 1;
-      padding: 30px;
+      padding: 80px 30px 30px 30px;
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 25px;
       background: #0f2a3f;
     }
@@ -63,58 +111,44 @@
       transition: transform 0.3s ease;
     }
     .card:hover {
-      transform: scale(1.03);
+      transform: scale(1.02);
     }
     .card img {
       width: 100%;
-      height: 200px;
+      height: 180px;
       object-fit: cover;
     }
     .card h3 {
-      margin: 10px;
+      margin: 8px 10px;
       color: #caf0f8;
-      font-size: 18px;
+      font-size: 16px;
     }
     .card p {
-      margin: 10px;
+      margin: 8px 10px 15px;
       color: #ade8f4;
-    }
-
-    nav {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      background: #081826;
-      padding: 12px 0;
-      text-align: center;
-      box-shadow: 0 3px 8px rgba(0,0,0,0.3);
-      z-index: 10;
-    }
-    nav a {
-      color: #fff;
-      margin: 0 12px;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    nav a:hover {
-      color: #00b4d8;
+      font-size: 13px;
     }
   </style>
 </head>
 <body>
 
   <nav>
-    <a href="index.html">Ana Sayfa</a>
-    <a href="mahalleler/iskele.html">Mahallelere Göre İlanlar</a>
-    <a href="hizmetlerimiz.html">Hizmetlerimiz</a>
-    <a href="sponsorlarimiz.html">Sponsorlarımız</a>
-    <a href="hakkimizda.html">Hakkımızda</a>
-    <a href="musteri-gorusleri.html">Müşteri Görüşleri</a>
+    <div class="logo-area">
+      <img src="https://cdn-icons-png.flaticon.com/512/619/619034.png" alt="Logo">
+      <span>datcaemlakdefteri.com</span>
+    </div>
+    <div class="nav-links">
+      <a href="index.html">Ana Sayfa</a>
+      <a href="mahalleler.html">Mahallelere Göre İlanlar</a>
+      <a href="hizmetlerimiz.html">Hizmetlerimiz</a>
+      <a href="sponsorlarimiz.html">Sponsorlarımız</a>
+      <a href="hakkimizda.html">Hakkımızda</a>
+      <a href="musteri-gorusleri.html">Müşteri Görüşleri</a>
+    </div>
   </nav>
 
   <div class="sidebar">
-    <h2>datçaemlakdefteri.com</h2>
+    <h2>İlan Filtresi</h2>
     <label>Defter No</label>
     <input type="text" placeholder="örn. 125">
 
